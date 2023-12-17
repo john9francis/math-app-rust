@@ -1,0 +1,4 @@
+[package]
+name = "math_app"
+version = "0.1.0"
+authors = ["John Francis <john9francis@gmail.com>"]
