@@ -26,9 +26,12 @@ fn main() {
       input.pop();
     }
 
+    // make the input into a vector
+    let mut input_vec: Vec<&str> = input.split_whitespace().collect();
+    let command = input_vec.remove(0);
 
     // handle inputs
-    match input.as_str() {
+    match command {
       "quit" => {
         println!("quitting...");
         break;
