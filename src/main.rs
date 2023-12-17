@@ -9,10 +9,32 @@ fn main() {
   // get input from user
   let mut input = String::new();
 
-  print!("Input: ");
-  let _ = io::stdout().flush();
+  loop {
+    print!("Input: ");
+    let _ = io::stdout().flush();
 
-  io::stdin().read_line(&mut input).expect("Failed to read line");
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+
+    // clean up the input
+    if let Some('\n') = input.chars().next_back() {
+      input.pop();
+    }
+
+    if let Some('\r') = input.chars().next_back() {
+      input.pop();
+    }
+
+    // let user quit out of loop
+    if input == "q" {
+      println!("quitting...");
+      break;
+    }
+
+    println!("{}", input);
+
+    // reset variable
+    input.clear();
+  }
 
   let result = basic::add(1.,2.);
   println!("{}", result);
