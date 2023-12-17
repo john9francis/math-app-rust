@@ -26,18 +26,22 @@ fn main() {
       input.pop();
     }
 
-    // let user quit out of loop
-    if input == "q" {
-      println!("quitting...");
-      break;
-    }
-    else if input == "help" {
-      println!("Try 'add 1 2' to add 1 to 2");
-    }
-    else {
-      println!("\"{}\" is not a recognized input.", input);
-    }
 
+    // handle inputs
+    match input.as_str() {
+      "quit" => {
+        println!("quitting...");
+        break;
+      },
+      "help" => {
+        println!("List of available commands: ");
+        println!("quit                              #exits the program");
+        println!("hello                             #greets you");
+        println!("add <number1> <number2>           #adds number1 to number2");
+      }
+      "hello" => println!("Nice to see you"),
+      _ => println!("\"{}\" is not a recognized command.", input),
+    }
 
     // reset variable
     input.clear();
