@@ -1,9 +1,9 @@
-pub fn add(input: &str) -> String {
+pub fn add(input: Vec<&str>) -> String {
   // convert the input string to floats
   let mut result = String::new();
   let mut floats: Vec<f64> = Vec::new();
 
-  for s in input.split_whitespace() {
+  for s in input {
     if let Ok(number) = s.parse::<f64>() {
       floats.push(number);
     } else {
