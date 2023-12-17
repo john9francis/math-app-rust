@@ -6,10 +6,11 @@ mod basic;
 fn main() {
   println!("Hello Math app world!");
 
-  // get input from user
+  // Initialize a variable to store user input
   let mut input = String::new();
 
   loop {
+    // get input from user
     print!("Input: ");
     let _ = io::stdout().flush();
 
@@ -30,6 +31,7 @@ fn main() {
       break;
     }
 
+    // for now, just echo back to the user what they said
     println!("{}", input);
 
     // reset variable
