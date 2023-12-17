@@ -40,10 +40,12 @@ fn main() {
         println!("List of available commands: ");
         println!("quit                              #exits the program");
         println!("hello                             #greets you");
-        println!("add <number1> <number2>           #adds number1 to number2");
+        println!("add <num1> <num2> <num3> ...      #adds all the numbers together");
+        println!("subtract <num1> <num2> <num3> ... #subtracts all numbers from the first number");
       }
       "hello" => println!("Nice to see you"),
       "add" => println!("{}", basic::add(input_vec)),
+      "subtract" => println!("{}", basic::subtract(input_vec)),
 
       _ => println!("\"{}\" is not a recognized command.", input),
     }
