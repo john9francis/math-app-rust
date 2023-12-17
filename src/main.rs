@@ -40,6 +40,8 @@ fn main() {
         println!("add <number1> <number2>           #adds number1 to number2");
       }
       "hello" => println!("Nice to see you"),
+      "add" => println!("{}", basic::add("1 2 3")),
+
       _ => println!("\"{}\" is not a recognized command.", input),
     }
 
@@ -47,6 +49,4 @@ fn main() {
     input.clear();
   }
 
-  let result = basic::add(1.,2.);
-  println!("{}", result);
 }
