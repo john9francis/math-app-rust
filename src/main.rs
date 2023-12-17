@@ -4,7 +4,8 @@ use std::io::Write;
 mod basic;
 
 fn main() {
-  println!("Hello Math app world!");
+  println!("Welcome to math app.");
+  println!("Type, \"help\" for a list of commands.");
 
   // Initialize a variable to store user input
   let mut input = String::new();
@@ -30,9 +31,13 @@ fn main() {
       println!("quitting...");
       break;
     }
+    else if input == "help" {
+      println!("Try 'add 1 2' to add 1 to 2");
+    }
+    else {
+      println!("\"{}\" is not a recognized input.", input);
+    }
 
-    // for now, just echo back to the user what they said
-    println!("{}", input);
 
     // reset variable
     input.clear();
