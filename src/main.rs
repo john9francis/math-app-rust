@@ -10,13 +10,10 @@ fn main() {
   // Initialize a variable to store user input
   let mut input = String::new();
 
-  // test our string to floats function
-  let st = String::from("1 2 3");
-  let s_to_f = basic::string_to_floats(st);
-  match s_to_f {
-    Ok(result) => println!("Result: {}", result),
-    Err(error) => println!("Error: {}", error),
-  }
+  // test our check_if_floats fn
+  let floats_string = String::from("1 2 d 3");
+  println!("{}", basic::check_if_floats(floats_string.split_whitespace().collect()));
+
 
   loop {
     // get input from user

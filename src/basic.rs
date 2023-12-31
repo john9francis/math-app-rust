@@ -45,7 +45,7 @@ pub fn subtract(input: Vec<&str>) -> String {
   result
 }
 
-
+/*
 pub fn string_to_floats(floats_string : String) -> Result<Vec<f64>, Vec<String>> {
   // convert input string to a vec
   let mut input_vec: Vec<&str> = floats_string.split_whitespace().collect();
@@ -74,4 +74,17 @@ pub fn string_to_floats(floats_string : String) -> Result<Vec<f64>, Vec<String>>
       Ok(floats)
     }
   
+}
+*/
+
+
+pub fn check_if_floats(input_vec: Vec<&str>) -> bool {
+  for s in input_vec {
+    if let Err(_) = s.parse::<f64>() {
+      return false;
+    }
+  }
+
+  true
+
 }
