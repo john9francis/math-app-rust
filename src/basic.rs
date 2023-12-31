@@ -14,6 +14,8 @@ pub fn add(input: Vec<&str>) -> String {
   }
 }
 
+
+
 pub fn subtract(input: Vec<&str>) -> String {
 
   // check if the input can be turned to floats
@@ -32,6 +34,7 @@ pub fn subtract(input: Vec<&str>) -> String {
       return process_numbers(&input).unwrap_err();
   }
 }
+
 
 
 fn process_numbers(input: &Vec<&str>) -> Result<Vec<f64>, String> {
