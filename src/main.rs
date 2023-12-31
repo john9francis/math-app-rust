@@ -10,10 +10,6 @@ fn main() {
   // Initialize a variable to store user input
   let mut input = String::new();
 
-  // test our check_if_floats fn
-  let floats_string = String::from("1 2 d 3");
-  println!("{}", basic::check_if_floats(floats_string.split_whitespace().collect()));
-
 
   loop {
     // get input from user
