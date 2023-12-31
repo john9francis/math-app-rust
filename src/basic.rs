@@ -46,14 +46,15 @@ pub fn subtract(input: Vec<&str>) -> String {
 }
 
 
-pub fn string_to_floats(floats_string : &str) -> Result<Vec<f64>, Vec<String>> {
+pub fn string_to_floats(floats_string : String) -> Result<Vec<f64>, Vec<String>> {
+  // convert input string to a vec
+  let mut input_vec: Vec<&str> = floats_string.split_whitespace().collect();
+
   // convert the input string to floats
   let mut floats: Vec<f64> = Vec::new();
   let mut invalid_floats: Vec<String> = Vec::new();
 
-  let input : String = floats_string.to_string();
-
-  for s in input {
+  for s in input_vec {
     if let Ok(number) = s.parse::<f64>() {
 
       // if it can be converted, add to floats list
@@ -62,7 +63,7 @@ pub fn string_to_floats(floats_string : &str) -> Result<Vec<f64>, Vec<String>> {
     } else {
 
       // if it can't be converted to a string, add to the invalid floats
-      invalid_floats.push(s);      
+      invalid_floats.push(s.to_string());      
 
     }
   }
@@ -72,7 +73,5 @@ pub fn string_to_floats(floats_string : &str) -> Result<Vec<f64>, Vec<String>> {
     } else {
       Ok(floats)
     }
-  
-
   
 }

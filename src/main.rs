@@ -11,7 +11,8 @@ fn main() {
   let mut input = String::new();
 
   // test our string to floats function
-  let s_to_f = basic::string_to_floats("1 2 3");
+  let st = String::from("1 2 3");
+  let s_to_f = basic::string_to_floats(st);
   match s_to_f {
     Ok(result) => println!("Result: {}", result),
     Err(error) => println!("Error: {}", error),
