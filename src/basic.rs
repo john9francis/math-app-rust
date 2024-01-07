@@ -37,6 +37,44 @@ pub fn subtract(input: Vec<&str>) -> String {
 
 
 
+pub fn multiply(input: Vec<&str>) -> String {
+  // check if the input can be turned to floats
+  if let Ok(floats) = convert_strings_to_floats(&input) {
+
+    // multiply all floats together
+    let product: f64 = floats.iter().product();
+
+    // return a string of the result
+    return format!("{}", product);
+
+  } else {
+
+    // get the character that is causing the error
+    return convert_strings_to_floats(&input).unwrap_err();
+  }
+}
+
+pub fn divide(input: Vec<&str>) -> String {
+
+  // check if the input can be turned to floats
+  if let Ok(mut floats) = convert_strings_to_floats(&input) {
+
+      // divide the first value by the product of all the rest.
+      let first: f64 = floats.remove(0);
+      let product: f64 = floats.iter().product();
+
+      // return a string of the result
+      return format!("{}", first / product);
+
+  } else {
+
+      // get the character that is causing the error
+      return convert_strings_to_floats(&input).unwrap_err();
+  }
+}
+
+
+
 fn convert_strings_to_floats(input: &Vec<&str>) -> Result<Vec<f64>, String> {
 
   // take in strings and make sure they're all floats

@@ -39,14 +39,18 @@ fn main() {
       },
       "help" => {
         println!("List of available commands: ");
-        println!("quit                              #exits the program");
-        println!("hello                             #greets you");
-        println!("add <num1> <num2> <num3> ...      #adds all the numbers together");
-        println!("subtract <num1> <num2> <num3> ... #subtracts all numbers from the first number");
+        println!("quit                              # exits the program");
+        println!("hello                             # greets you");
+        println!("add <num1> <num2> <num3> ...      # adds all the numbers together");
+        println!("subtract <num1> <num2> <num3> ... # subtracts all numbers from the first number");
+        println!("multiply <num1> <num2> <num3> ... # multiplies all numbers together");
+        println!("divide <num1> <num2> <num3> ...   # divides first num by the rest: (num1)/(num2*num3*...)");
       }
       "hello" => println!("07734"),
       "add" => println!("{}", basic::add(input_vec)),
       "subtract" => println!("{}", basic::subtract(input_vec)),
+      "multiply" => println!("{}", basic::multiply(input_vec)),
+      "divide" => println!("{}", basic::divide(input_vec)),
 
       _ => println!("\"{}\" is not a recognized command.", input),
     }
