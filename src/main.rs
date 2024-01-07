@@ -44,7 +44,7 @@ fn main() {
         println!("add <num1> <num2> <num3> ...      #adds all the numbers together");
         println!("subtract <num1> <num2> <num3> ... #subtracts all numbers from the first number");
       }
-      "hello" => println!("Nice to see you"),
+      "hello" => println!("07734"),
       "add" => println!("{}", basic::add(input_vec)),
       "subtract" => println!("{}", basic::subtract(input_vec)),
 

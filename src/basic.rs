@@ -1,7 +1,7 @@
 pub fn add(input: Vec<&str>) -> String {
 
   // process the numbers to see if they are floats
-  if let Ok(floats) = process_numbers(&input) {
+  if let Ok(floats) = convert_strings_to_floats(&input) {
 
       // add up and return a string with the sum  
       let sum: f64 = floats.iter().sum();
@@ -10,7 +10,7 @@ pub fn add(input: Vec<&str>) -> String {
   } else {
 
       // get the character that isn't a float
-      return process_numbers(&input).unwrap_err();
+      return convert_strings_to_floats(&input).unwrap_err();
   }
 }
 
@@ -19,7 +19,7 @@ pub fn add(input: Vec<&str>) -> String {
 pub fn subtract(input: Vec<&str>) -> String {
 
   // check if the input can be turned to floats
-  if let Ok(mut floats) = process_numbers(&input) {
+  if let Ok(mut floats) = convert_strings_to_floats(&input) {
 
       // subtract all the floats from the first one
       let first: f64 = floats.remove(0);
@@ -31,13 +31,13 @@ pub fn subtract(input: Vec<&str>) -> String {
   } else {
 
       // get the character that is causing the error
-      return process_numbers(&input).unwrap_err();
+      return convert_strings_to_floats(&input).unwrap_err();
   }
 }
 
 
 
-fn process_numbers(input: &Vec<&str>) -> Result<Vec<f64>, String> {
+fn convert_strings_to_floats(input: &Vec<&str>) -> Result<Vec<f64>, String> {
 
   // take in strings and make sure they're all floats
 
