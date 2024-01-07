@@ -73,6 +73,37 @@ pub fn divide(input: Vec<&str>) -> String {
   }
 }
 
+pub fn factorial(input: Vec<&str>) -> String {
+  // first, make sure vec is size 1
+  if input.len() != 1 {
+    return "factorial function takes in exactly one number.".to_string();
+  }
+
+  // make sure input is a number
+  let floats = match convert_strings_to_floats(&input) {
+    Ok(floats) => floats,
+    Err(e) => return e,
+  };
+
+  // make sure input is non negative
+  let num = floats[0];
+  if num < 0.0 {
+    return format!("input: {}, can not compute factorial of a negative number", num)
+  }
+
+  // if everything is fine up to this point, calc the factorial
+  format!("{}", recursive_factorial(num))
+
+}
+
+fn recursive_factorial(n: f64) -> f64 {
+  if n <= 0.0 {
+    1.0
+  } else {
+    n * recursive_factorial(n - 1.0)
+  }
+}
+
 
 
 fn convert_strings_to_floats(input: &Vec<&str>) -> Result<Vec<f64>, String> {
