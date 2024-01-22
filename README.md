@@ -2,7 +2,7 @@
 An app that does math for you
 
 # Goals:
-1. Simple operators
+1. Simple operators ✔️
 2. Algebra
 3. Monte carlo integrals
 4. Integrals from tables
